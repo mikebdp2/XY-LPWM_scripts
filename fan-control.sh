@@ -34,7 +34,7 @@ else
     VALUE="$1"
 fi
 
-# --- Pre-flight port checks (identical to xy-pwm.sh) ---
+# --- Pre-flight port checks (identical to xy-lpwm.sh) ---
 if [[ ! -e "$PORT" ]]; then
     echo "Error: Device '$PORT' does not exist." >&2
     exit 1
@@ -51,10 +51,10 @@ if [[ ! -r "$PORT" || ! -w "$PORT" ]]; then
 fi
 
 # --- Check that the main script exists and is executable ---
-MAIN_SCRIPT="./xy-pwm.sh"
+MAIN_SCRIPT="./xy-lpwm.sh"
 if [[ ! -x "$MAIN_SCRIPT" ]]; then
     echo "Error: '$MAIN_SCRIPT' not found or not executable." >&2
-    echo "Make sure xy-pwm.sh is in the same directory and has execute permissions." >&2
+    echo "Make sure xy-lpwm.sh is in the same directory and has execute permissions." >&2
     exit 1
 fi
 
